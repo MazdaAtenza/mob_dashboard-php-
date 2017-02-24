@@ -1,0 +1,316 @@
+<div ui-view class="container-fluid">
+	<section class="content">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-header with-border btn-title">
+						<h3 class="box-title">ID：13579235的用户详情</h3>
+					</div>
+					<div class="box-body detail_content">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="content_title">
+									<b class="col-md-9">基本资料</b>
+									<div class="col-md-3 pull-right">
+										<button class="btn btn-default col-md-5 col-md-offset-1">禁止发言</button>
+										<button class="btn btn-default col-md-5 col-md-offset-1">禁止登陆</button>
+									</div>
+								</div>	
+								<div class="content_body">
+									<div class="row">
+										<div class="col-md-12 id_margin_bottom">
+											<p><b>ID</b></p>
+											<p>13579235</p>
+										</div>
+										<div class="col-md-12 item_margin_bottom">
+											<div class="row">
+												<div class="col-md-4">
+													<label for="changePassword">修改密码</label>
+													<input type="password" id="changePassword" class="form-control">
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12 item_margin_bottom">
+											<div class="row">
+												<div class="col-md-4">
+													<label for="changePassword">昵称</label>
+													<input type="placeholder" id="changePassword" class="form-control">
+												</div>
+												<div class="col-md-4 saveBtn">
+													<button class="btn btn-primary">保存修改</button>
+													<button class="btn btn-default">取消</button>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12 item_margin_bottom">
+											<div class="row">
+												<div class="col-md-4 userHeadImg">
+													<div class="row">
+														<label class="col-md-12" for="changePassword">头像</label>
+													</div>
+													<div class="col-md-3">
+														<img src="../../../../images/avatar5.png" alt="">
+													</div>
+													<div class="col-md-3 fixHeadImg"><a href="">修改头像</a></div>
+													<div class="col-md-3 delHeadImg"><a href="">删除头像</a></div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12 item_margin_bottom">
+											<div class="row">
+												<div class="col-md-4">
+													<label>注册手机号码</label>
+													<p>18866666666</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="content_title">
+									<p class="col-md-12"><b class="col-md-12">通用资料</b></p>
+								</div>
+								<div class="content_body">
+									<div class="row">
+										<div class="col-md-12 item_margin_bottom">
+											<div class="row">
+												<div class="col-md-12 item_margin_bottom">
+													<div class="col-md-4">
+														<label for="changePassword">性别</label>
+														<select name="sex" id="" class="form-control">
+															<option value="sex">男</option>
+															<option value="sex">女</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12 item_margin_bottom">
+													<div class="col-md-4">
+													    <label for="changePassword">出生年月</label>
+													    <select name="sex" id="" class="form-control">
+															<option value="sex">2017年1月1日</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12 item_margin_bottom">
+													<div class="col-md-4">
+														<label for="changePassword">年龄</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12 item_margin_bottom">
+													<label for="">所在地</label>
+													<div class="row">
+														<div class="col-md-4">
+															<div class="col-md-4">
+																<select class="btn btn-default col-md-12" name="selectCountry" id="" ng-model="selectedCountry" ng-options="selectCountry.countryName as selectCountry.countryName for selectCountry in selectcountrys" ng-change="SelectCountry(countryName)"></select>
+															</div>
+															<div class="col-md-4">
+																<select class="btn btn-default col-md-12" name="selectProvince" id="" ng-model="selectedProvince" ng-options="selectProvince.provinceName as selectProvince.provinceName for selectProvince in selectProvinces" ng-change="SelectProvince(provinceName)"></select>
+															</div>
+															<div class="col-md-4">
+																<select class="btn btn-default col-md-12" name="selectCity" id="" ng-model="selectedCity" ng-options="selectCity.cityName as selectCity.cityName for selectCity in selectCitys" ng-change="SelectCity(cityName)"></select>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12 item_margin_bottom">
+													<div class="col-md-4">
+														<div class="row">
+															<label for="changePassword">个性签名</label>
+														</div>
+														<input type="text" class="form-control" placeholder="妇科圣手吕大夫">
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12 item_margin_bottom">
+													<div class="col-md-4">
+														<div class="row">
+															<label for="changePassword">电子邮箱</label>
+														</div>
+														<input type="text" class="form-control" placeholder="mazdaatenza@qq.com">
+													</div>
+												</div>
+											</div>	
+											<div class="row">
+												<div class="col-md-12 item_margin_bottom">
+													<div class="col-md-4">
+														<div class="row">
+															<label for="changePassword">邮箱</label>
+														</div>
+														<input type="text" class="form-control" placeholder="224763">
+													</div>
+												</div>
+											</div>	
+											<div class="row">
+												<div class="col-md-12">
+													<div class="col-md-4">
+														<div class="row">
+															<label for="changePassword">个人说明</label>
+														</div>
+														<textarea name="" id="" class="col-md-12" cols="30" rows="10" placeholder="输入个人说明"></textarea>
+													</div>
+												</div>
+											</div>	
+												
+											</div>
+										</div>
+									</div>
+									<div class="content_title">
+										<b class="col-md-12">社交资料</b>
+									</div>
+									<div class="content_body">
+										<div class="row">
+											<div class="col-md-12 item_margin_bottom">
+												<div class="col-md-8">
+													<div class="row">
+														<label for="changePassword">微信授权资料</label>
+														<div class="row">
+															<label class="col-md-1" for="changePassword">头像：</label>
+															<div class="userHeadImg">
+																<img src="../../../../images/avatar5.png" alt="">
+															</div>
+														</div>
+														<div class="row">
+															<label class="col-md-1" for="changePassword">昵称:</label>
+															<span class="wechatInfo">xiaomoo</span>
+														</div>
+														<div class="row">
+															<label class="col-md-1" for="changePassword">性别:</label>
+															<span class="wechatInfo">男</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="content_title">
+										<b class="col-md-12">自定义资料</b>
+									</div>
+									<div class="content_body">
+										<div class="row">
+											<div class="col-md-12 item_margin_bottom">
+												<div class="row">
+													<div class="col-md-12 item_margin_bottom">
+														<div class="col-md-4">
+															<div class="row">
+																<label for="changePassword">电子邮箱</label>
+															</div>
+															<input type="text" class="form-control" placeholder="mazdaatenza@qq.com">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="content_title">
+										<b class="col-md-12">设备资料</b>
+									</div>
+									<div class="content_body">
+										<div class="row">
+											<div class="col-md-12 item_margin_bottom">
+												<div class="row">
+													<div class="col-md-12 item_margin_bottom">
+														<div class="col-md-4">
+															<div class="row">
+																<label for="changePassword">手机型号1</label>
+															</div>
+															<div class="row">
+																<span class="wechatInfo">iPhone6 Plus</span>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-12 item_margin_bottom">
+														<div class="col-md-4">
+															<div class="row">
+																<label for="changePassword">注册经纬度</label>
+															</div>
+															<div class="row">
+																<span class="wechatInfo">23:33</span>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-12 item_margin_bottom">
+														<div class="col-md-4">
+															<div class="row">
+																<label for="changePassword">登录经纬度记录</label>
+															</div>
+															<div class="row">
+																<span class="wechatInfo">23:33</span>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-12 item_margin_bottom">
+														<div class="col-md-4">
+															<div class="row">
+																<label for="changePassword">通讯录</label>
+															</div>
+															<div class="row">
+																<a class="wechatInfo">打开通讯录</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-12 item_margin_bottom">
+														<div class="col-md-4">
+															<div class="row">
+																<label for="changePassword">设备信息</label>
+															</div>
+															<div class="row">
+																<span class="wechatInfo">IMEI：34234787657</span>
+																<span class="wechatInfo">ifdfa：2425267875</span>
+																<span class="wechatInfo">Mac33:33:33:33:55:33</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="content_title">
+										<b class="col-md-12">关联功能</b>
+									</div>
+									<div class="content_body">
+										<div class="row">
+											<div class="col-md-12 item_margin_bottom">
+												<div class="col-md-4 relativeFunc">
+													<div class="row">
+														<div class="relativeFunc_left col-md-3">
+															<p>移动CMS</p>
+														</div>
+														<div class="relativeFunc_right col-md-9">
+															<div class="col-md-6">
+																<label for="">阅读过的文章</label>
+																<p>112篇</p>
+															</div>
+															<div class="col-md-6">
+																<label for="">评论过的文章</label>
+																<p>112篇</p>
+															</div>
+															<div class="col-md-6">
+																<label for="">赞过的文章</label>
+																<p>112篇</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

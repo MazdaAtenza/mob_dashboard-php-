@@ -1,0 +1,120 @@
+<div ui-view class="container-fluid">
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="box-header with-border btn-title">
+            <h3 class="box-title" >字段管理</h3>
+          </div>
+          <div class="box-center">
+            <div class="row">
+              <div class="col-md-12">
+                <select class="btn btn-default col-md-2" name="selectType" id="" ng-model="selectedType" ng-options="selectType.typeName as selectType.typeName for selectType in selectTypes" ng-change="filterWordsChange(selectedType)"></select>
+                <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#addFields">添加自定义字段</button>
+              </div>
+            </div>
+          </div>
+          <div class="box-body no-padding">
+              <table class="table table-bordered table-striped table-hover userInfoList">
+                <thead>
+                  <tr>
+                    <th ng-repeat="title in fieldSetting.title">{{title}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="field in tableContent.cur_shown_list">
+                    <td>{{field.enName}}</td>
+                    <td>{{field.name}}</td>
+                    <td>{{field.type}}</td>
+                    <td>{{field.note}}</td>
+                    <td>{{field.classify}}</td>
+                    <td>{{field.active}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="tableFooter pull-right col-md-5">
+              <div class="pull-right">
+                <div class="userInfoPaging pull-right btn-sm" paging page="tableContent.cur_page" page-size="tableContent.page_size"
+                     total="tableContent.thisFieldDate.length" show-prev-next="true" show-first-last="true"
+                     paging-action="foo(tableContent, page, platformNo)">
+                </div>
+              </div>
+              <p class="pull-right"><span>共{{tableContent.thisFieldDate.length}}条,每页显示{{tableContent.page_size}}条</span></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="modal fade" id="addFields" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <form role="form" class="login-form" ng-submit="LoginModalCtrl.submit(_email, _password)">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">添加自定义字段</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row field_name">
+                  <label for="date_field_name" class="col-nd-2">数据字段名称</label>
+                  <div class="col-md-10 pull-right">
+                    <input type="password" ng-model="_password" placeholder="输入数据字段名称" class="form-password form-control" id="date_field_name">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row field_name">
+                  <label for="field_name" class="col-nd-2">字段名称</label>
+                  <div class="col-md-10 pull-right">
+                    <input type="password" ng-model="_password" placeholder="输入字段名称" class="form-password form-control" id="field_name">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row field_name">
+                  <label class="col-nd-2">数据类型</label>
+                  <div class="col-md-10 pull-right">
+                    <label for="string" class="date_type"><input id="string" type="radio" name="date_type">&nbsp;&nbsp;字符串类型(string)</label>
+                    <label for="Number" class="date_type"><input id="Number" type="radio" name="date_type">&nbsp;&nbsp;数值类(Number)</label>
+                    <label for="Array" class="date_type"><input id="Array" type="radio" name="date_type">&nbsp;&nbsp;数组类型(Array)</label>
+                    <label for="Boolean" class="date_type"><input id="Boolean" type="radio" name="date_type">&nbsp;&nbsp;布尔类型(Boolean)</label>
+                    <label for="Date" class="date_type"><input id="Date" type="radio" name="date_type">&nbsp;&nbsp;时间类型(Date)</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row field_name">
+                  <label class="col-nd-2">字段说明</label>
+                  <div class="col-md-10 pull-right">
+                    <textarea class="form-control" name="" id="" rows="10"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary">保存</button>
+          </div>
+        </div>
+      </div>
+    </form>
+</div>
+</div>
+  

@@ -1,0 +1,192 @@
+<!doctype html>
+<html ng-app="prealarmFrontendApp">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <script>
+        function getCookie(name){
+            var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+            if(arr != null){
+                return unescape(arr[2]);
+            }else{
+                return null;
+            }
+        }
+        //第一层登陆检测
+        console.log(getCookie("CNZZDATA4921211"))
+    </script>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="./bower_components/components-font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="./bower_components/froala-wysiwyg-editor/css/froala_editor.min.css" />
+    <link rel="stylesheet" href="./bower_components/froala-wysiwyg-editor/css/froala_style.min.css" />
+    <link rel="stylesheet" href="./bower_components/froala-wysiwyg-editor/css/plugins/fullscreen.css">
+    <link rel="stylesheet" href="./bower_components/froala-wysiwyg-editor/css/plugins/image.css">
+    <link rel="stylesheet" href="./bower_components/bootstrap-daterangepicker/daterangepicker.css"/>
+
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./app/modules/cms/article/cmsArticle.css">
+    <link rel="stylesheet" href="./app/modules/cms/category/cmsCategory.css">
+    <link rel="stylesheet" href="./app/modules/cms/setting/cmsSetting.css">
+    <link rel="stylesheet" href="./app/modules/ums/setting/umsSetting.css">
+    <link rel="stylesheet" href="./app/modules/ums/statistics/umsStatistics.css">
+    <link rel="stylesheet" href="./app/modules/ums/field/umsField.css">
+    <link rel="stylesheet" href="./app/modules/ums/user/umsUser.css">
+    <!-- endbuild -->
+</head>
+<body>
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+          <img src="http://mob.com/public/images/logo_black.png" alt="" height="40">
+      </a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">技术支持</a></li>
+        <li><a href="#">文档中心</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <img src="http://www.mob.com/static/link/558a8e748b447.jpeg" alt="" height="36px" width="36px">
+          </a>
+          <ul class="dropdown-menu ">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+</nav>
+<div class="page-sidebar pagescroll">
+    <div class="dropdown">
+      <div class="app-select-box dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <img src="http://www.mob.com/static/link/558a8e748b447.jpeg" alt=""> 空气质量指数
+        <span class="caret"></span>
+      </div>
+      <ul class="dropdown-menu app-select-box-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#">应用-A</a></li>
+        <li><a href="#">应用-BBBB</a></li>
+        <li><a href="#">应用-CCCCCCCC</a></li>
+      </ul>
+    </div>
+    <ul class="left-nav">
+        <li ng-repeat="nav in leftNav" ng-class="{'open' : nav.showChildren, 'active' : nav.isActive}">
+            <a ui-sref="{{nav.url}}"  ng-click="cliclLeftNav(nav, $index)" ng-if="nav.url">{{nav.title}}</a>
+            <a  ng-click="cliclLeftNav(nav, $index)"  ng-if="!nav.url">{{nav.title}}</a>
+            <ul ng-if="nav.children">
+                <li ng-repeat="childrenNav in nav.children" ng-class="{'active' : childrenNav.isActive}">
+                    <a ui-sref="{{childrenNav.url}}">{{childrenNav.title}}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div ui-view class="wrapper page-wrapper ">
+
+</div>
+
+<!-- ./wrapper -->
+
+
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+<script src="./bower_components/angular/angular.min.js"></script>
+<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./bower_components/angular-cookies/angular-cookies.min.js"></script>
+<script src="./bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="./bower_components/angular-route/angular-route.min.js"></script>
+<script src="./bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="./bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="./bower_components/angular-touch/angular-touch.min.js"></script>
+<script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="./bower_components/angular-paging/dist/paging.min.js"></script>
+
+<script src="./bower_components/moment/min/moment.min.js"></script>
+<script src="./bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="./bower_components/angular-daterangepicker/js/angular-daterangepicker.min.js"></script>
+
+<script src="./bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+<script src="./bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+
+<script src="./bower_components/froala-wysiwyg-editor/js/froala_editor.min.js"></script>
+<script src="./bower_components/froala-wysiwyg-editor/js/plugins/align.min.js"></script>
+<script src="./bower_components/froala-wysiwyg-editor/js/plugins/entities.min.js"></script>
+<script src="./bower_components/froala-wysiwyg-editor/js/plugins/font_family.min.js"></script>
+<script src="./bower_components/froala-wysiwyg-editor/js/plugins/font_size.min.js"></script>
+<script src="./bower_components/froala-wysiwyg-editor/js/plugins/fullscreen.min.js"></script>
+<script src="./bower_components/froala-wysiwyg-editor/js/plugins/image.min.js"></script>
+<script src="./bower_components/froala-wysiwyg-editor/js/plugins/link.min.js"></script>
+<script src="./bower_components/froala-wysiwyg-editor/js/plugins/lists.min.js"></script>
+<script src="./bower_components/froala-wysiwyg-editor/js/plugins/paragraph_format.min.js"></script>
+<script src="./bower_components/froala-wysiwyg-editor/js/languages/zh_cn.js"></script>
+<script src="./bower_components/froala-wysiwyg-editor/js/plugins/paragraph_style.min.js"></script>
+<script src="./bower_components/angular-froala/src/angular-froala.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="./app/app.js"></script>
+<script src="./app/components/config.js"></script>
+
+<!-- router -->
+<script src="./app/components/routers/commonRouter.js"></script>
+<script src="./app/components/routers/umsRouter.js"></script>
+<script src="./app/components/routers/cmsRouter.js"></script>
+<!-- router end -->
+
+<script src="./app/components/run.js"></script>
+
+<!-- common -->
+<script src="./app/components/services/promiseServices.js"></script>
+<script src="./app/components/filters/filters.js"></script>
+<script src="./app/components/directives/directives.js"></script>
+<!-- common end -->
+
+<!-- index -->
+<script src="./app/modules/index/indexController.js"></script>
+<!-- index end -->
+
+<!-- ums -->
+<script src="./app/modules/ums/umsService.js"></script>
+<script src="./app/modules/ums/user/umsUserController.js"></script>
+<script src="./app/modules/ums/field/umsFieldController.js"></script>
+<script src="./app/modules/ums/fundament/umsFoundamentController.js"></script>
+<script src="./app/modules/ums/statistics/umsStatisticsController.js"></script>
+<script src="./app/modules/ums/setting/umsSettingController.js"></script>
+<!-- ums end -->
+
+<!-- cms -->
+<script src="./app/modules/cms/cmsService.js"></script>
+<script src="./app/modules/cms/article/cmsArticleController.js"></script>
+<script src="./app/modules/cms/category/cmsCategoryController.js"></script>
+<script src="./app/modules/cms/comment/cmsCommentController.js"></script>
+<script src="./app/modules/cms/setting/cmsSettingController.js"></script>
+<!-- cms end -->
+
+<!-- endbuild -->
+</body>
+</html>

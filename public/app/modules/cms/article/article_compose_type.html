@@ -1,0 +1,244 @@
+<div ui-view class="container-fluid">
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-header with-border btn-title">
+                        <h3 class="box-title">创建新普通文章</h3>
+                    </div>
+                    <div class="box-body no-padding">
+                        <div class="">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div ng-if="currentType == 'link'">
+                                        <input class="form-control input-lg " type="text" placeholder="在此输入标题">
+                                        <br/>
+                                        <input class="form-control input-lg " type="text" placeholder="请输入链接地址，例如：http://">
+                                    </div>
+                                    <div ng-if="currentType == 'normoal'">
+                                        <input class="form-control input-lg " type="text" placeholder="在此输入标题">
+                                        <br/>
+
+
+
+                                        <textarea froala="froalaOptions" ng-model="myHtml"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="panel panel-default panel-mob">
+                                        <div class="panel-heading">发布</div>
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <button class="btn btn-default pull-left">保存草稿</button>
+                                                    <button class="btn btn-default pull-right">预览</button>
+                                                </div>
+                                            </div>
+                                            <br/>
+
+                                            <p>&nbsp;<i class="fa fa-calendar"></i>
+                                                立即发布
+                                                <a href="">编辑</a>
+                                            </p>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <a class="text-danger pull-left">
+                                                        &nbsp;<i class="fa fa-trash"></i>
+                                                        <span class="">移至回收站</span></a>
+                                                    <button class="btn btn-primary pull-right">发布</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default panel-mob">
+                                        <div class="panel-heading">文章样式</div>
+                                        <div class="panel-body">
+                                            <div class="radio" ng-repeat="item in articleImageType">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1"
+                                                           value="option1" checked>
+                                                    <i class="fa fa-image"></i> {{item.name}}
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default panel-mob">
+                                        <div class="panel-heading">分类目录</div>
+                                        <div class="panel-body">
+                                            <ul id="myTabs" class="nav nav-tabs" role="tablist">
+                                                <li role="presentation" class="active"><a>所有分类目录</a></li>
+                                                <li role="presentation" class=""><a>最常用</a></li>
+
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div class="checkbox" ng-repeat="item in categorys">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsRadios" id="optionsRadios1"
+                                                               value="option1">
+                                                        {{item.name}}
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="panel panel-default panel-mob">
+                                        <div class="panel-heading">标签</div>
+                                        <div class="panel-body">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Search for...">
+											<span class="input-group-btn">
+												<button class="btn btn-default" type="button">添加</button>
+											</span>
+                                            </div><!-- /input-group -->
+                                            <br/>
+
+                                            <p>多个标签请用英文(,)分开</p>
+
+                                            <p><a href="">从常用标签中选择</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default panel-mob">
+                                        <div class="panel-heading">样式图片</div>
+                                        <div class="panel-body">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <div class="file-upload-box"  ngf-select="upload($file)" ng-model="file" name="file">
+                                                        <span  ng-show="!imageUrl">选择图片</span>
+                                                        <img ng-src="{{imageUrl}}" width="64" height="64" ng-show="imageUrl" />
+                                                    </div>
+                                                    <div class="progress mini-progress" ng-show="progressPercentage > 0 ">
+                                                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{progressPercentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progressPercentage}}%">
+                                                            <span class="sr-only">45% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">这里是文章标题</h4>
+                                                    这里是文章简介，将自动从您的文章中进行提取展示。
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="media">
+
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">这里是文章标题</h4>
+                                                    这里是文章简介，将自动从您的文章中进行提取展示。
+                                                </div>
+                                                <div class="media-right">
+                                                    <div class="file-upload-box"  ngf-select="upload($file)" ng-model="file" name="file">
+                                                        <span  ng-show="!imageUrl">选择图片</span>
+                                                        <img ng-src="{{imageUrl}}" width="64" height="64" ng-show="imageUrl" />
+                                                    </div>
+                                                    <div class="progress mini-progress" ng-show="progressPercentage > 0 ">
+                                                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{progressPercentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progressPercentage}}%">
+                                                            <span class="sr-only">45% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="article-one-box">
+                                                <h4>这里是文章标题</h4>
+                                                <p>这里是文章简介，将自动从您的文章中进行提取展示</p>
+                                                <div class="file-upload-box"  ngf-select="upload($file)" ng-model="file" name="file">
+                                                    <span  ng-show="!imageUrl">选择图片</span>
+                                                    <img ng-src="{{imageUrl}}" width="100%" height="64" ng-show="imageUrl" />
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="article-one-box">
+                                                <h4>这里是文章标题</h4>
+                                                <p>这里是文章简介，将自动从您的文章中进行提取展示</p>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="file-upload-box"  ngf-select="upload($file)" ng-model="file" name="file">
+                                                            <span  ng-show="!imageUrl">选择图片</span>
+                                                            <img ng-src="{{imageUrl}}" width="100%" height="64" ng-show="imageUrl" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="file-upload-box"  ngf-select="upload($file)" ng-model="file" name="file">
+                                                            <span  ng-show="!imageUrl">选择图片</span>
+                                                            <img ng-src="{{imageUrl}}" width="100%" height="64" ng-show="imageUrl" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="file-upload-box"  ngf-select="upload($file)" ng-model="file" name="file">
+                                                            <span  ng-show="!imageUrl">选择图片</span>
+                                                            <img ng-src="{{imageUrl}}" width="100%" height="64" ng-show="imageUrl" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default panel-mob">
+                                        <div class="panel-heading">设置</div>
+                                        <div class="panel-body">
+                                            <div class="form-inline">
+
+                                                <div class="checkbox" >
+                                                    <label>
+                                                        <input type="checkbox"> 置顶
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <select class="form-control input-sm" id="exampleInputEmail3">
+                                                        <option>全局</option>
+                                                        <option>分类</option>
+                                                        <option>首页</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input class="form-control input-sm"  placeholder="有效期，留空为永久有效" date-range-picker ng-model="dddate"  options="{singleDatePicker: true, opens: 'left', drops: 'up'}"/>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="form-inline">
+
+                                                <div class="checkbox" >
+                                                    <label>
+                                                        <input type="checkbox"> 热门
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <select class="form-control input-sm" id="exampleInputEmail3">
+                                                        <option>全局</option>
+                                                        <option>分类</option>
+                                                        <option>首页</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input class="form-control input-sm"  placeholder="有效期，留空为永久有效" date-range-picker ng-model="dddate"  options="{singleDatePicker: true, opens: 'left', drops: 'up'}"/>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="form-inline">
+
+                                                <div class="checkbox" >
+                                                    <label>
+                                                        <input type="checkbox"> 禁止评论
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

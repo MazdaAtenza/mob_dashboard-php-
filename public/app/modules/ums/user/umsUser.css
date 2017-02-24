@@ -1,0 +1,101 @@
+.filterItem{
+	padding: 0;
+}
+.headImg{
+	width: 28px;
+	height: 28px;
+}
+.wechatRegister{
+	color: #81cf38;
+	font-size: 30px;
+}
+.qqRegister{
+	color: #759cde;
+	font-size: 30px;
+}
+.weiboRegister{
+	color: #e45151;
+	font-size: 30px;
+}
+.phoneRegister{
+	color: #5961a7;
+	font-size: 36px;
+}
+.content_title{
+	background: #f7f7f7;
+	height: 60px;
+}
+.content_title b{
+	line-height: 60px;
+	font-size: 18px;
+}
+.content_title>div{
+	margin-top: 13px;
+}
+.content_body{
+	background: #fff;
+	padding: 20px;
+}
+.id_margin_bottom{
+	margin-bottom: 10px;
+}
+.item_margin_bottom{
+	margin-bottom: 20px;
+}
+.item_margin_bottom label{
+	line-height: 32px;
+}
+.saveBtn{
+	padding-top: 36px;
+}
+.saveBtn button{
+	margin-right: 20px;
+}
+.userHeadImg{
+	position: relative;
+	top: 0;
+	left: 0;
+}
+.userHeadImg img{
+	width: 80px;
+	height: 80px;
+}
+.userHeadImg .fixHeadImg{
+	position: absolute;
+	bottom: 0;
+	left: 23%;
+}
+.userHeadImg .delHeadImg{
+	position: absolute;
+	left: 36%;
+	bottom: 0;
+}
+.filterContent select{
+	padding-left: 0;
+	padding-right: 0;
+}
+.filterContent div{
+	padding: 0;
+}
+.wechatInfo{
+	line-height: 32px;
+}
+.relativeFunc{
+	border: 1px solid #bbb;
+	height: 180px;
+}
+.relativeFunc div{
+	height: 100%;
+}
+.relativeFunc_left{
+	border-right: 1px solid #bbb;
+}
+.relativeFunc_left p{
+	text-align: center;
+	line-height: 180px;
+}
+.relativeFunc_right div{
+	height: 50%;
+	line-height: 40px;
+	padding: 10px;
+}

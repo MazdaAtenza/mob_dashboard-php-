@@ -1,0 +1,143 @@
+<div ui-view class="container-fluid">
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="box-header with-border btn-title">
+            <h3 class="box-title">数据统计</h3>
+          </div>
+          <div class="box-body no-padding">
+            <div class="col-md-12 statistics-header">
+              <span class="totalUserNum">总用户数：11155</span>
+              <span class="totalInstallNum">总安装数：21122356</span>
+               <ul class="nav nav-pills pull-right">
+                  <li class="platformName" ng-repeat="tab in statisticsPlatform" ng-class="{active:isActiveTab(tab.url)}" 
+                  ng-click="onClickTab(tab)"  data-toggle="tab" ><a href="">{{tab.platformName}}</a></li>
+              </ul>
+              <div id="mainView">
+                <div ng-include="currentTab"></div>
+              </div>
+            </div>
+          </div>
+          <script type="text/ng-template" id="one.tpl.html">
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-striped table-hover userInfoList">
+                  <thead>
+                    <tr>
+                      <th ng-repeat="title in allStatistics.title">{{title}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="shownDate in tableShownList.cur_shown_list">
+                      <td>{{shownDate.date}}</td>
+                      <td>{{shownDate.startDevice}}</td>
+                      <td>{{shownDate.newDevice}}</td>
+                      <td>{{shownDate.newRegister}}</td>
+                      <td>{{shownDate.newLogoin}}</td>
+                      <td>{{shownDate.onlineTime}}</td>
+                      <td>{{shownDate.transformRate}}</td>
+                      <td>{{shownDate.openTimes}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="tableFooter pull-right col-md-5">
+                <div class="pull-right">
+                  <div class="userInfoPaging pull-right btn-sm" paging page="tableShownList.cur_page" page-size="tableShownList.page_size"
+                       total="tableShownList.statisticsList.length" show-prev-next="true" show-first-last="true"
+                       paging-action="foo(tableContent, page, platformNo)">
+                  </div>
+                </div>
+                <p class="pull-right"><span>共{{tableShownList.statisticsList.length}}条,每页显示{{tableShownList.page_size}}条</span></p>
+              </div>
+            </div>
+            
+          </script>
+
+          <script type="text/ng-template" id="two.tpl.html">
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-striped table-hover userInfoList">
+                  <thead>
+                    <tr>
+                      <th ng-repeat="title in allStatistics.title">{{title}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="shownDate in tableShownList.cur_shown_list">
+                      <td>{{shownDate.date}}</td>
+                      <td>{{shownDate.startDevice}}</td>
+                      <td>{{shownDate.newDevice}}</td>
+                      <td>{{shownDate.newRegister}}</td>
+                      <td>{{shownDate.newLogoin}}</td>
+                      <td>{{shownDate.onlineTime}}</td>
+                      <td>{{shownDate.transformRate}}</td>
+                      <td>{{shownDate.openTimes}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="tableFooter pull-right col-md-5">
+                <div class="pull-right">
+                  <div class="userInfoPaging pull-right btn-sm" paging page="tableShownList.cur_page" page-size="tableShownList.page_size"
+                       total="tableShownList.statisticsList.length" show-prev-next="true" show-first-last="true"
+                       paging-action="foo(tableContent, page, platformNo)">
+                  </div>
+                </div>
+                <p class="pull-right"><span>共{{tableShownList.statisticsList.length}}条,每页显示{{tableShownList.page_size}}条</span></p>
+              </div>
+            </div>
+            
+          </script>
+
+          <script type="text/ng-template" id="three.tpl.html">
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-striped table-hover userInfoList">
+                  <thead>
+                    <tr>
+                      <th ng-repeat="title in allStatistics.title">{{title}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="shownDate in tableShownList.cur_shown_list">
+                      <td>{{shownDate.date}}</td>
+                      <td>{{shownDate.startDevice}}</td>
+                      <td>{{shownDate.newDevice}}</td>
+                      <td>{{shownDate.newRegister}}</td>
+                      <td>{{shownDate.newLogoin}}</td>
+                      <td>{{shownDate.onlineTime}}</td>
+                      <td>{{shownDate.transformRate}}</td>
+                      <td>{{shownDate.openTimes}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="tableFooter pull-right col-md-5">
+                <div class="pull-right">
+                  <div class="userInfoPaging pull-right btn-sm" paging page="tableShownList.cur_page" page-size="tableShownList.page_size"
+                       total="tableShownList.statisticsList.length" show-prev-next="true" show-first-last="true"
+                       paging-action="foo(tableContent, page, platformNo)">
+                  </div>
+                </div>
+                <p class="pull-right"><span>共{{tableShownList.statisticsList.length}}条,每页显示{{tableShownList.page_size}}条</span></p>
+              </div>
+            </div>
+            
+          </script>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+  

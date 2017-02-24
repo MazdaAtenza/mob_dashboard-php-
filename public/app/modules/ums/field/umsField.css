@@ -1,0 +1,19 @@
+.box-center{
+	padding-bottom: 10px;
+	margin-top: 20px;
+}
+.field_name{
+	line-height: 34px;
+	text-align: center;
+	height: 34px;
+	margin-bottom: 15px;
+}
+.field_name>div{
+	display: flex;
+	flex-wrap: wrap;
+}
+.field_name .date_type{
+	margin-right: 20px;
+	line-height: 30px;
+	font-weight: 400;
+}

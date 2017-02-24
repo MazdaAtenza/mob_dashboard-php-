@@ -1,0 +1,20 @@
+{  
+  "name": "package",  
+  "version": "1.0.0",  
+  "description": "配置package文件，实现文件更改后浏览器即时刷新",  
+  "main": "gulpfile.js",  
+  "scripts": {  
+    "test": "echo \"Error: no test specified\" && exit 1"  
+  },  
+  "devDependencies": {  
+    "browser-sync": "^2.13.0",  
+    "gulp": "^3.9.1",  
+    "gulp-jshint": "^2.0.1",  
+    "gulp-less": "^3.1.0"  
+  },  
+  "keywords": [  
+    "package"  
+  ],  
+  "author": "Luhua",  
+  "license": "ISC"  
+} 

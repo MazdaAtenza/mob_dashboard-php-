@@ -1,0 +1,102 @@
+<div class="container-fluid" ui-view>
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12 content-footer">
+        <div class="box">
+          <div class="box-header with-border btn-title">
+            <h3 class="box-title">设置</h3>
+          </div>  
+        </div>
+        <div class="box-body box-content">
+          <div class="row padding-top">
+            <div class="col-md-12">
+              <div class="head_portrait">
+                  <b>默认头像</b>
+                  <img src="../../../../images/avatar5.png" alt="">
+                  <a href="">上传头像</a>
+                  <span>若用户未设置头像则显示默认头像</span>
+              </div>
+              <div class="row padding-bottom padding-top">
+                <div class="col-md-12 nickname">
+                  <label for="nickname" class="pull-left">默认昵称</label>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control pull-right" id="nickname" placeholder="网易用户">
+                  </div>
+                </div>
+              </div>
+              <div class="row padding-bottom">
+                <div class="col-md-12 nickname">
+                  <label for="mostTimes" class="pull-left">同一设备允许最多注册次数</label>
+                  <div class="col-md-1">
+                    <input type="text" class="form-control pull-right mostTimes" id="mostTimes" placeholder="0">
+                  </div>
+                  <span>(0为不限制注册次数)</span>
+                </div>
+              </div> 
+              <div class="flexDisplay">
+                <div check-box model="checkboxValue.openComment"></div>
+                <span>是否开启读取用户定位</span>
+              </div>
+              <div class="flexDisplay">
+                <div check-box model="checkboxValue.openComment"></div>
+                <span>是否开启读取用户手机通讯录</span>
+              </div>
+              <div class="padding-bottom"><b>配置短信登录</b></div>
+              <div class="flexDisplay">
+                <div check-box model="checkboxValue.openComment"></div>
+                <span>支持全球手机号码注册</span>
+              </div>
+              <div class="flexDisplay">
+                <div check-box model="checkboxValue.openComment"></div>
+                <span>开通智能验证</span>
+                <div class="validateTips col-md-8">开启后，若该设备待验证手机号码，手机设备唯一ID和SIM卡序列号，与上一次该设备短信验证通过的手机号码、手机设备唯一ID和SIM卡序列号完全一致。则无需进行短信验证直接智能验证通过。(仅针对安卓设备有效)</div>
+              </div>
+              <div class="flexDisplay">
+                <div check-box model="checkboxValue.openComment"></div>
+                <span>是否设置自定义短信签名</span>
+              </div>
+              <div class="padding-bottom"><b>配置第三方登录</b></div>
+              <div class="flexDisplay">
+                <div check-box model="checkboxValue.openComment"></div>
+                <span>是否启用微信登录</span>
+                <span><i class="fa fa-wechat wechat"></i></span>
+              </div>
+              <div class="setAppID col-md-7 padding-bottom">
+                <div class="AppScret padding-bottom col-md-7 nickname">
+                  <label for="AppScret" class="pull-left col-md-2">AppScret</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control pull-right" id="AppScret">
+                  </div>
+                </div>
+                <div class="AppID col-md-7 nickname">
+                  <label for="AppID" class="pull-left col-md-2">AppID</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control pull-right" id="AppID">
+                  </div>
+                </div>
+              </div>
+              <div class="flexDisplay">
+                <div check-box model="checkboxValue.openComment"></div>
+                <span>是否启用新浪微博登录</span>
+                <span><i class="fa fa-weibo weibo"></i></span>
+              </div>
+              <div class="flexDisplay">
+                <div check-box model="checkboxValue.openComment"></div>
+                <span>是否启用QQ登录</span>
+                <span><i class="fa fa-qq tencent"></i></span>
+              </div>
+              <div class="flexDisplay">
+                <div check-box model="checkboxValue.openComment"></div>
+                <span>是否启用Facebook登录</span>
+                <span><i class="fa fa-facebook facebook"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

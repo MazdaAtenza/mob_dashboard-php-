@@ -1,0 +1,5 @@
+/vendor
+.env
+/public/bower_components
+/node_modules
+.idea

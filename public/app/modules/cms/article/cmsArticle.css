@@ -1,0 +1,51 @@
+.table-content{
+	background: #fff; 
+	margin-top: 10px; 
+	margin-bottom: 0;
+}
+.table .fixDate{
+	margin-bottom: 0;
+}
+.table-footer{
+	padding-left: 10px;
+}
+.paging{
+	font-size: 12px; 
+	padding-right: 0;
+}
+.stick{
+	color: #33b774;
+}
+.hot{
+	color: #a10647;
+}
+.noComment{
+	color: #32c1cf;
+}
+.draft{
+	color: #e9a781;
+}
+.common{
+	display: none;
+}
+
+.file-upload-box{
+	width: 66px;
+	height:66px;
+	border:1px solid #eee;
+	text-align: center;
+	line-height: 64px;
+	font-size: 12px;
+	color: #aaa;
+	cursor: pointer;
+}
+.file-upload-box img{
+	float: left;
+}
+.mini-progress{
+	height:6px;
+	border-radius: 0;
+}
+.article-one-box .file-upload-box{
+	width: 100%;
+}

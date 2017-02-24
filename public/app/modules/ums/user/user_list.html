@@ -1,0 +1,123 @@
+<div ui-view class="container-fluid">
+	<section class="content">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-header with-border btn-title">
+						<h3 class="box-title" >会员列表</h3>
+					</div>
+					<div class="box-body no-padding">
+						<div class="box-body">
+							<div class="row">
+								<div class="col-md-7" >
+									<div class="btn-group filterItem col-md-{{filterOption.width}}" ng-repeat="(key, filterOption) in filterOptions">
+									  <button type="button" class="btn btn-default btn-sm col-md-9">{{filterOption.filedName}}<span ng-if="filterOption.filedName">：</span>{{filterOption.setValue}}</button>
+									  <button type="button" class="btn btn-default btn-sm col-md-3 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    <span class="caret"></span>
+									    <span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu">
+									    <li ng-repeat="option in filterOption.options"><a ng-click="setOption(key, option)">{{option.value}}</a></li>
+									  </ul>
+									</div>
+									<button class="btn btn-primary btn-sm col-md-1">筛选</button>
+								</div>
+			
+								<div class="col-md-4 pull-right">
+									<div class="input-group pull-right filterContent">
+										<select class="btn btn-default col-md-4 filterSelect" name="selectType" id="" ng-model="selectedType" ng-options="selectType.typeName as selectType.typeName for selectType in selectTypes" ng-change="filterWordsChange(selectedType)"></select>
+										<div class="col-md-8">
+											<input type="text" class="form-control" placeholder="搜索">
+										</div>
+								      	<span class="input-group-btn">
+									        <button class="btn btn-primary" type="button">搜索</button>
+									     </span>
+								    </div>
+								</div>
+							</div>
+						</div>
+						<table class="table table-bordered table-striped table-hover userInfoList">
+							<thead>
+								<tr>
+									<th ng-repeat="title in userInfoList.title">{{title}}</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="item in userInfoList.userList">
+									<td>{{item.ID}}</td>
+									<td><img class="headImg" src="{{item.headImg}}" alt=""></td>
+									<td>{{item.nickname}}</td>
+									<td>{{item.phoneNo}}</td>
+									<td>
+										<span ng-if="item.registerType == '微信'"><i class="fa fa-wechat wechatRegister"></i></span>
+										<span ng-if="item.registerType == 'QQ'"><i class="fa fa-qq qqRegister"></i></span>
+										<span ng-if="item.registerType == '微博'"><i class="fa fa-weibo weiboRegister"></i></span>
+										<span ng-if="item.registerType == '手机号码'"><i class="fa fa-mobile-phone phoneRegister"></i></span>
+									</td>
+									<td>{{item.registerTime}}</td>
+									<td>{{item.terminal}}</td>
+									<td>{{item.loginTime}}</td>
+									<td><a ui-sref="ums_user_detail">{{item.operation}}</a></td>
+								</tr>
+							</tbody>
+						</table>
+                    </div>
+					</div>
+					<div class="row">
+			            <div class="tableFooter pull-right col-md-5">
+			              <div class="pull-right">
+			                <div class="userInfoPaging pull-right btn-sm" paging page="tableContent.cur_page" page-size="tableContent.page_size"
+			                     total="tableContent.thisFieldDate.length" show-prev-next="true" show-first-last="true"
+			                     paging-action="foo(tableContent, page, platformNo)">
+			                </div>
+			              </div>
+			              <p class="pull-right"><span>共{{tableContent.thisFieldDate.length}}条,每页显示{{tableContent.page_size}}条</span></p>
+			            </div>
+			        </div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="modal fade" id="addMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<form role="form" class="login-form" ng-submit="LoginModalCtrl.submit(_email, _password)">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">添加用户</h4>
+	      </div>
+	      <div class="modal-body">
+	        <div class="form-group">
+			    <label for="exampleInputEmail1">手机号码</label>
+			    <input type="email" class="form-control" ng-modal="member.telephone" placeholder="输入手机号码">
+			  </div>
+		      <div class="form-group">
+		        <label for="form-password">密码</label>
+		        <input type="password" ng-model="_password" placeholder="密码" class="form-password form-control" id="form-password">
+		      </div>
+		      <div class="form-group">
+		        <label for="form-password">昵称</label>
+		        <input type="text" ng-model="_password" placeholder="输入昵称" class="form-password form-control" id="form-password">
+		      </div>
+		      <div class="form-group">
+		        <label  for="form-password">性别</label>
+		        <div>
+		        <label class="checkbox-inline">
+				  <input type="checkbox" id="inlineCheckbox1" value="option1"> 男
+				</label>
+				<label class="checkbox-inline">
+				  <input type="checkbox" id="inlineCheckbox2" value="option2"> 女
+				</label>
+				</div>
+		      </div>
+	      </div>
+	      <div class="modal-footer">
+
+	        <button type="button" class="btn btn-primary">确认添加</button>
+	      </div>
+	    </div>
+	  </div>
+	  </form>
+	</div>
+	</div>
+	

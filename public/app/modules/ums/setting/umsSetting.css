@@ -1,0 +1,74 @@
+.head_portrait img{
+	margin-left: 20px;
+	width: 80px;
+	height: 80px;
+}
+.head_portrait b{
+	vertical-align: top;
+}
+.head_portrait span, .head_portrait a{
+	vertical-align: bottom
+}
+.head_portrait a{
+	margin: 0 10px;
+}
+.nickname{
+	padding-right: 0;
+	line-height: 34px;
+}
+.nickname span{
+	color: #ccc;
+}
+.padding-bottom{
+	padding-bottom: 20px;
+}
+.mostTimes{
+	text-align: center;
+}
+.validateTips{
+	margin-left: 20px;
+	color: #aaa;
+	line-height: 20px;
+}
+.wechat, .weibo, .tencent, .facebook{
+	color: #fff;
+	padding-bottom: 2px;
+	height: 30px;
+	line-height: 30px;
+	width: 30px;
+	text-align: center;
+	font-size: 20px;
+	border-radius: 5px;
+	margin-left: 10px;
+}
+.wechat{
+	background: #81cf38;
+}
+.weibo{
+	background: #e66654;
+}
+.tencent{
+	background: #759cde;
+}
+.facebook{
+	background: #3a5c95;
+	font-size: 28px;
+}
+.setAppID{
+	margin-left: 115px;
+	text-align: left;
+	padding: 0;
+}
+.AppScret{
+	padding-top: 20px;
+	border-top: 1px solid #e1e1e1;
+}
+.AppScret, .AppID, .AppScret label, .AppID label{
+	padding-left: 0;
+}
+.AppScret>div, .AppID>div{
+	padding-left: 0;
+}
+.content-footer{
+	padding-bottom: 60px;
+}

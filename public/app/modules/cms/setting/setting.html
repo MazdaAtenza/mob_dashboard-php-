@@ -1,0 +1,58 @@
+<div class="container-fluid" ui-view>
+	<div class="content">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-header with-border btn-title">
+						<h3 class="box-title">设置</h3>
+					</div>	
+				</div>
+				<div class="box-body box-content">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="col-md-12 line-style padding-top">
+								<div class="flexDisplay">
+									<div check-box model="checkboxValue.openRecommend"></div>
+									<span>是否启用推荐分类(推荐会根据用户画像自动推荐所有分类内容给用户)</span>
+								</div>
+								<div class="flexDisplay">
+									<div check-box model="checkboxValue.openComment"></div>
+									<span>是否开启评论功能</span>
+								</div>
+								<div class="flexDisplay">
+									<div check-box model="checkboxValue.openHot"></div>
+									<span>是否开启热门分类</span>
+								</div>
+								<div class="flexDisplay">
+									<div check-box model="checkboxValue.openFilter"></div>
+									<span>自动过滤垃圾评论</span>
+								</div>
+								<div class="row">
+									<label for="equipNum" class="equipNum col-md-1 pull-left" control-label>预览设备号：</label>
+									<div class="col-md-11">
+										<input type="text" class="form-control pull-right" id="equipNum" placeholder="多个设备号请用逗号分隔">
+									</div>
+								</div>
+								<div class="flexDisplay margin-top">
+									<div check-box model="checkboxValue.openOwnSystem"></div>
+									<span>使用自有用户系统</span>
+								</div>
+								<div class="textContent">
+									<p>自有用户系统集成帮助及接口说明：</p>
+									<p>记录用户阅读文章接口：</p>
+									<p>用户点赞文章的接口：</p>
+									<p>获取制定文章的阅读用户列表接口：</p>
+									<p>获取制定文章的点赞数接口：</p>
+									<p>获取制定文章的评论数接口：</p>
+									<p>获取制定文章的评论列表：</p>
+									<p>发表一条评论接口：</p>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

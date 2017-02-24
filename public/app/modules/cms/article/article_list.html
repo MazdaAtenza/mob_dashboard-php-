@@ -1,0 +1,126 @@
+<div class="container-fluid" ui-view>
+	<section class="content">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="header header-title">
+					<h3 class="pull-left">所有文章</h3>
+					<a ui-sref="cms_article_compose" class="btn btn-default btn-sm writeArticle">写文章</a>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row">
+							<p class="col-md-7 pull-left">
+								<a href="" ng-repeat="item in allList" ng-click="changeTabs($index);">{{item.name}}({{item.articleNum}})&nbsp;|&nbsp;</a>
+							</p>
+							<div class="col-md-5 pull-right">
+								<div class="pull-right">
+									<div>
+										<button class="btn btn-default btn-sm pull-right">搜索评论</button>
+									</div>
+								</div>
+								<div class="col-md-9 pull-right">
+									<input type="text" placeholder="请输入评论内容" class="form-control">
+								</div>
+								
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-11">
+								<div class="btn-group" ng-repeat="(key, filterOption) in filterOptions">
+								  <button type="button" class="btn btn-default btn-sm ">{{filterOption.setValue}}</button>
+								  <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    <span class="caret"></span>
+								    <span class="sr-only">Toggle Dropdown</span>
+								  </button>
+								  <ul class="dropdown-menu">
+								    <li ng-repeat="option in filterOption.options"><a ng-click="setOption(key, option)">{{option.value}}</a></li>
+								  </ul>
+								</div>
+								<button class="btn btn-default btn-sm " ng-click="filterList();">筛选</button>
+							</div>
+							<div class="col-md-1 pull-right total-item">
+								<span>共{{totleNum}}项</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-12">
+						<table class="table table-striped table-hover table-bordered table-content">
+							<thead>
+								<tr class="text-primary">
+									<th><input type="checkbox" ng-model="checked.isChecked" ng-click="selectAll();"></th>
+									<th class="col-md-1">内容ID</th>
+									<th class="col-md-5">标题</th>
+									<th class="col-md-1">分类</th>
+									<th class="col-md-1">阅读数</th>
+									<th class="col-md-1">点赞数</th>
+									<th class="col-md-1">评论数</th>
+									<th class="col-md-2">日期</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="item in currentList">
+									<td><input type="checkbox" ng-model="item.isChecked" ng-click="selectOne()"></td>
+									<td>{{item.contentID}}</td>
+									<td>{{item.articleTitle}}<span ng-class="{true: 'draft', false: 'common'}[item.draft]">【草稿】</span><span ng-class="{true: 'stick', false: 'common'}[item.top]">【置顶 有效期:{{item.topValidity}}】</span><span ng-class="{true: 'hot', false: 'common'}[item.hot]">【热门 有效期:{{item.hotValidity}}】</span><span ng-class="{true: 'noComment', false: 'common'}[item.noComment]">【禁止评论】</span></td>
+									<td>{{item.articleClassify}}</td>
+									<td>{{item.readingNum}}</td>
+									<td>{{item.priseNum}}</td>
+									<td>{{item.commentNum}}</td>
+									<td>
+										<p class="fixDate">{{item.operation}}</p>
+										<p class="fixDate">{{item.fixDate}}</p>
+									</td>
+								</tr>						
+							</tbody>
+						</table>
+					</div>
+					<div class="col-md-12">
+						<div class="checkbox col-md-3 table-footer">
+							<label for="selectAll">
+								<input type="checkbox" ng-model="checked.isChecked" ng-click="selectAll();">全选
+							</label>
+							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="{{popup.name}}" ng-click="moveArticle();">移动</button>
+							<button class="btn btn-default btn-sm" ng-click="deleteArticle();">删除</button>
+						</div>
+						<div class="pull-right col-md-6 paging">
+							<div class="pull-right" paging
+                                 page="currentPage"
+                                 page-size="pageSize"
+                                 total="totleNum"
+                                 show-prev-next="true"
+                                 show-first-last="true"
+                                 paging-action="foo(shownList, page)">
+                            </div>
+						</div>
+					</div>
+
+					<div class="modal fade " id="moveArticle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<form role="form" class="login-form" ng-submit="LoginModalCtrl.submit(_email, _password)">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel">移动到</h4>
+					      </div>
+					      <div class="modal-body">
+					        <div class="form-group">
+					        	<div class="radio" ng-repeat="articleItem in filterOptions.selectArticle.options">
+									<label for="{{articleItem.name}}" >
+										<input type="radio" id="{{articleItem.name}}" name="moveToItem" ng-click="selectMoveTo(articleItem, moveItems)">
+										{{articleItem.value}}
+									</label>
+								</div>
+					      	</div>
+					      	<div class="modal-footer">
+					        	<button type="button" class="btn btn-primary" ng-click="moveArticle()">确认</button>
+					      	</div>
+					      </div>
+					  	</div>
+					  </form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

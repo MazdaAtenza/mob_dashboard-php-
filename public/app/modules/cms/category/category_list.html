@@ -1,0 +1,81 @@
+<div ui-view class="container-fluid">
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="relativePos">
+            <h3 class="box-title pull-left">分类目录</h3>
+            <button class="btn btn-default btn-sm writeArticle">添加分类</button>
+            <span class="pull-right total-item">共2项</span>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <table class="table table-bordered table-striped table-hover table-content">
+                <thead>
+                  <tr>
+                    <th><input type="checkbox"></th>
+                    <th>分类</th>
+                    <th>名称</th>
+                    <th class="col-md-6">内容</th>
+                    <th class="col-md-2">操作</th>
+                    <th class="col-md-2">排序</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td>312654</td>
+                    <td>推荐</td>
+                    <td>水电费水电费水电费水电费水电费阿斯达多撒所</td>
+                    <td>
+                      <a ui-sref="user_detail">编辑</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                      <a href="">删除</a>
+                    </td>
+                    <td>
+                        <input type="text"  class="orderNum"/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td>312654</td>
+                    <td>推荐</td>
+                    <td>水电费水电费水电费水电费水电费阿斯达多撒所</td>
+                    <td>
+                      <a ui-sref="user_detail">编辑</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                      <a href="">删除</a>
+                    </td>
+                    <td>
+                        <input type="text" class="orderNum"/>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="pull-left selectAll">
+                <div class="checkbox ">
+                  <label for="selectAll"><input type="checkbox" id="selectAll">全选</label>
+                <button class="btn btn-default btn-sm">排序</button>
+                <button class="btn btn-default btn-sm">删除</button>
+                </div>
+              </div>
+              <div class="pull-right" paging
+                     page="1"
+                     page-size="10"
+                     total="40"
+                     show-prev-next="true"
+                     show-first-last="true"
+                     paging-action="foo('bar', page)">
+                </div>
+            </div>
+          </div>
+          <!-- paging-action="DoCtrlPagingAct('Paging Clicked', page, pageSize, total) -->
+          
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+  
